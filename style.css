@@ -14,7 +14,7 @@ html {
 }
 
 .container {
-    min-height: 70vh;
+    min-height: 80vh;
     width: 100%;
     display:flex;
     align-items: center;
@@ -32,7 +32,7 @@ p {
     font-size: 1.4rem;
     margin-top: 5px;
     line-height: 2.5rem;
-    font-weight: 300;
+    font-weight: 500;
     letter-spacing: 0.05rem;
 }
 
@@ -40,7 +40,7 @@ p {
 #hero h1 {
     display: inline-block;
     width: fit-content;
-    font-size: 4rem;
+    font-size: 3rem;
     position: relative;
     color: var(--green);
 }
@@ -51,11 +51,14 @@ p {
     color: white;
 }
 #hero img {
-    width: 50%;
+    width: 20%;
+    height: 20%;
     float: right;
     position: absolute;
-    bottom: 0;
-    padding-right: 200px;
+    bottom: 50%;
+    /* top: 20; */
+    /* margin/-top: 20px; */
+    /* padding-right: 100px; */
 }
 
 #hero .hero {
@@ -63,6 +66,56 @@ p {
     margin: 0 auto;
     padding: 0 50px;
     justify-content: flex-start;
+    flex-direction: row;
+}
+
+#features .feature {
+    flex-direction: column;
+    text-align: left;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 100px 0;
+}
+
+
+#features .feature-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+#featuress .feature-info {
+    padding: 30px;
+    flex-basis: 50%;
+    background-color: var(--green);
+    height: 100%;
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#features .feature-info h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--green);
+}
+
+#features .feature-img {
+    width: 60%;
+    height: 60%;
+    padding: 20px;
+}
+
+#features .feature-info p {
+    color: white;
+    width: 60%
+    font-size: 1rem;
 }
 
 /* Services Section */
@@ -114,9 +167,10 @@ p {
 .section-title {
     color: white;
     text-align: center;
+    font-size: 2rem;
 }
 
-#projects .projects{
+#projects .projects {
     flex-direction: column;
     max-width: 1200px;
     margin: 0 auto;
@@ -192,8 +246,16 @@ p {
     text-align: center;
 }
 /* About Section */
+
+#about img {
+    transition: .3s ease transform;
+}
+
+#about .col-right:hover img {
+    transform: scale(1.05);
+}
 #about .about {
-    flex-direction: column-reverse;
+    flex-direction: column;
     text-align: center;
     max-width: 1200px;
     margin: 0 auto;
@@ -228,6 +290,11 @@ p {
 #about h3 {
     color: var(--green);
 }
+
+#about img {
+    width: 50%;
+    height: 50%;
+}  
 
 /* Footer */
 
@@ -280,12 +347,12 @@ p {
 /* Media Query For Tablel */
 @media only screen and (min-width: 760px) {
     h1.section-title {
-        font-size: 6rem;
+        font-size: 4rem;
     }
 
     /* Hero */
     #hero h1 {
-        font-size: 6rem;
+        font-size: 4rem;
     }
 
     /* #hero img {
@@ -293,7 +360,18 @@ p {
     } */
 
     #hero h2 {
-        font-size: 2rem;
+        font-size: 1rem;
+    }
+
+    #hero img {
+        width: 35%;
+        height: 35%;
+        float: right;
+        position: absolute;
+        bottom: 40%;
+        /* top: 20; */
+        /* margin/-top: 20px; */
+        /* padding-right: 100px; */
     }
 
     /* Services Section */
@@ -323,10 +401,48 @@ p {
         height: 100%;
     }
 
+    #features .feature-item {
+        flex-direction: row;
+        padding: 50px;
+        width: 100%;
+        border-radius: 0;
+    }
 }
 
 @media only screen and (min-width: 1200px) {
+    #hero h1 {
+        font-size: 6rem;
+    }
+
+    #hero h2 {
+        font-size: 2rem;
+    }
+
+    #hero img {
+        width: 40%;
+        height: 60%;
+        float: right;
+        position: absolute;
+        bottom: 25%;
+    }
     #services .service-bottom .service-item {
         flex-basis: 22%
+    }
+
+    #features .feature-img {
+        width: 40%;
+        height: 40%;
+    }
+
+    #features .feature-item {
+        flex-direction: row;
+        padding-left: 200px;
+        padding-right: 200px;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    #about .about {
+        flex-direction: row;
     }
 }
